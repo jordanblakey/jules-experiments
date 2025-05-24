@@ -1,25 +1,33 @@
-[tool.poetry]
+[project]
 name = "image-tool"
 version = "0.1.0"
 description = "A Python-based CLI utility for common image manipulation tasks."
-authors = ["Jules <jules@google.com>"]
+authors = [
+    {name = "Jules", email = "jules@google.com"},
+]
 readme = "README.md"
-packages = [{ include = "main.py", from = "src" }]
+requires-python = ">=3.10"
+
+[project.scripts]
+image-tool = "image_tool.main:app"
+
+[tool.poetry]
+# name, version, description, authors, readme are moved to [project]
+packages = [{include = "image_tool", from = "src"}]
+# The 'python' dependency is now under project.requires-python
 
 [tool.poetry.dependencies]
-python = ">=3.10"  # Taking the version from the new toml, ensuring it's >=3.10
 Pillow = "^10.0.0"
 
 [tool.poetry.group.dev.dependencies]
 # Add development dependencies here if any in the future (e.g., pytest)
-ruff = "^0.5.3"
+ruff = "^0.1.0"
 pytest = "^7.4"
 
-[tool.poetry.scripts]
-image-tool = "main:main"
+# [tool.poetry.scripts] table is removed as its content moved to [project.scripts]
 
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]  # Kept from the new toml
+requires = ["poetry-core>=2.0.0,<3.0.0"] # Kept from the new toml
 build-backend = "poetry.core.masonry.api"
 
 # Ruff configuration
@@ -29,27 +37,27 @@ ignore = []
 # fixable and unfixable are removed to use Ruff's defaults
 
 exclude = [
-  ".bzr",
-  ".direnv",
-  ".eggs",
-  ".git",
-  ".hg",
-  ".mypy_cache",
-  ".nox",
-  ".pants.d",
-  ".ruff_cache",
-  ".svn",
-  ".tox",
-  ".venv",          # Common virtualenv name
-  "venv",           # Another common virtualenv name
-  "env",            # Yet another common virtualenv name
-  "__pypackages__",
-  "_build",
-  "buck-out",
-  "build",
-  "dist",
-  "node_modules",   # Though not Python, often present in mixed projects
-  ".poetry",        # Poetry's own directory
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",         # Common virtualenv name
+    "venv",          # Another common virtualenv name
+    "env",           # Yet another common virtualenv name
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",  # Though not Python, often present in mixed projects
+    ".poetry",       # Poetry's own directory
 ]
 per-file-ignores = {}
 

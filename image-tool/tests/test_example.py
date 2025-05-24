@@ -1,9 +1,3 @@
-"""Example test file."""
-
-import pytest
-
-
-@pytest.mark.simple
-def test_example():
-    """An example test function."""
+# TODO: Add real tests for image_tool functionality
+def test_example_placeholder():
     assert True
