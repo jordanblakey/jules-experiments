@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "A Python-based CLI utility for common image manipulation tasks."
 authors = ["Jules <jules@google.com>"]
 readme = "README.md" # This will now point to image-tool/README.md
-packages = [{include = "image_tool", from = "."}] # Adjusted 'from' to current dir
+packages = [{include = "src"}] # Package is now 'src'
 
 [tool.poetry.dependencies]
 python = ">=3.10" # Taking the version from the new toml, ensuring it's >=3.10
@@ -16,7 +16,7 @@ ruff = "^0.1.0"
 pytest = "^7.4"
 
 [tool.poetry.scripts]
-image-tool = "image_tool.main:app"
+image-tool = "src.main:main" # Points to main function in src/main.py
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"] # Kept from the new toml
