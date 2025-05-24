@@ -11,7 +11,7 @@ python = ">=3.10" # Taking the version from the new toml, ensuring it's >=3.10
 Pillow = "^10.0.0"
 ruff = "^0.1.0"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 # Add development dependencies here if any in the future (e.g., pytest)
 
 [tool.poetry.scripts]
