@@ -4,10 +4,12 @@ version = "0.1.0"
 description = "A Python-based CLI utility for common image manipulation tasks."
 authors = ["Jules <jules@google.com>"]
 readme = "README.md" # This will now point to image-tool/README.md
-packages = [{include = "image_tool", from = "."}] # Adjusted 'from' to current dir
+packages = [
+  { include = "image_tool", from = "." },
+] # Adjusted 'from' to current dir
 
 [tool.poetry.dependencies]
-python = ">=3.10" # Taking the version from the new toml, ensuring it's >=3.10
+python = ">=3.10"  # Taking the version from the new toml, ensuring it's >=3.10
 Pillow = "^10.0.0"
 
 [tool.poetry.group.dev.dependencies]
@@ -19,7 +21,7 @@ pytest = "^7.4"
 image-tool = "image_tool.main:app"
 
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"] # Kept from the new toml
+requires = ["poetry-core>=2.0.0,<3.0.0"]  # Kept from the new toml
 build-backend = "poetry.core.masonry.api"
 
 # Ruff configuration
@@ -29,27 +31,27 @@ ignore = []
 # fixable and unfixable are removed to use Ruff's defaults
 
 exclude = [
-    ".bzr",
-    ".direnv",
-    ".eggs",
-    ".git",
-    ".hg",
-    ".mypy_cache",
-    ".nox",
-    ".pants.d",
-    ".ruff_cache",
-    ".svn",
-    ".tox",
-    ".venv",         # Common virtualenv name
-    "venv",          # Another common virtualenv name
-    "env",           # Yet another common virtualenv name
-    "__pypackages__",
-    "_build",
-    "buck-out",
-    "build",
-    "dist",
-    "node_modules",  # Though not Python, often present in mixed projects
-    ".poetry",       # Poetry's own directory
+  ".bzr",
+  ".direnv",
+  ".eggs",
+  ".git",
+  ".hg",
+  ".mypy_cache",
+  ".nox",
+  ".pants.d",
+  ".ruff_cache",
+  ".svn",
+  ".tox",
+  ".venv",          # Common virtualenv name
+  "venv",           # Another common virtualenv name
+  "env",            # Yet another common virtualenv name
+  "__pypackages__",
+  "_build",
+  "buck-out",
+  "build",
+  "dist",
+  "node_modules",   # Though not Python, often present in mixed projects
+  ".poetry",        # Poetry's own directory
 ]
 per-file-ignores = {}
 
