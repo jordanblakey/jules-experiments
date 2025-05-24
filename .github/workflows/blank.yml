@@ -36,9 +36,6 @@ jobs:
       - name: Run Ruff
         run: cd image-tool && poetry run ruff check .
 
-      - name: List files in workspace
-        run: ls -R image-tool
-
       - name: Run Pytest
         run: cd image-tool && poetry run pytest
 
