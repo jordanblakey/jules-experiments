@@ -7,7 +7,8 @@ from PIL import Image
 # Ensure src.main can be imported.
 # This assumes that pytest is run from the 'image-tool' directory,
 # or that PYTHONPATH is set up so that 'src' is discoverable.
-# An alternative is to adjust sys.path here, but it's cleaner if the test runner handles it.
+# An alternative is to adjust sys.path here, but it's cleaner if the test
+# runner handles it.
 from src import main as image_tool_main
 
 # --- Pytest Fixture for Test Environment ---
