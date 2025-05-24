@@ -1,65 +1,106 @@
 # Image Manipulation CLI
 
-This project is a Python-based CLI utility for performing common image manipulation tasks. It's also an experiment in learning to work with Jules, exploring project configuration, and collaborating on software development.
+This project is a Python-based CLI utility for performing common image manipulation tasks. It's designed to demonstrate effective project organization and modern Python development practices.
 
 ## Purpose
 
-*   Learn about working with the AI coding assistant, Jules.
-*   Explore workflows for providing direction, reviewing PRs, and basic project configuration.
-*   Create a functional Python CLI tool for image manipulation.
+- Create a functional Python CLI tool for image manipulation
+- Demonstrate best practices in Python project structure
+- Showcase modern development workflows with Poetry and testing
 
-## Technology Choices
+## Technology Stack
 
-*   **Python**: The core language for the CLI tool.
-*   **Pillow**: A Python Imaging Library for image manipulation functionalities.
-*   **Ruff**: For code formatting and linting to maintain code quality.
+- **Python**: Core programming language
+- **Pillow**: Industry-standard Python Imaging Library
+- **Poetry**: Dependency management and packaging
+- **Ruff**: Modern Python linter and formatter
+- **pytest**: Testing framework
 
-## Planned Functionality
+## Features
 
-The CLI tool aims to provide the following image manipulation features:
-*   Cropping
-*   Scaling
-*   Flipping (horizontal/vertical)
-*   Generating thumbnails
+The CLI tool provides the following image manipulation capabilities:
 
-## Getting Started
+- Cropping images to specified dimensions
+- Scaling images while maintaining aspect ratio
+- Flipping images (horizontal/vertical)
+- Generating thumbnails with custom sizes
 
-1.  **Clone the repository:**
-    ```bash
-    git clone <repository-url>
-    cd <repository-name> 
-    ```
-    *(Replace `<repository-url>` and `<repository-name>` with the actual URL and name)*
+## Installation
 
-2.  **Install Poetry:**
-    If you don't have Poetry installed, please follow the instructions on the [official Poetry website](https://python-poetry.org/docs/#installation).
+1. **Clone the repository:**
 
-3.  **Install dependencies:**
-    Navigate to the project root (where `pyproject.toml` is located) and run:
-    ```bash
-    poetry install
-    ```
-    This will create a virtual environment if one doesn't exist and install all necessary dependencies.
+   ```bash
+   git clone https://github.com/jordanblakey/jules-experiments.git
+   cd jules-experiments/image-tool
+   ```
 
-4.  **Run the tool:**
-    To run the CLI tool, use:
-    ```bash
-    poetry run python image_tool.py --help
-    ```
-    *(Note: The CLI tool is currently under development. The entry point `image_tool.py` is a placeholder.)*
+2. **Install Poetry:**
 
-5.  **Running Tests (Placeholder):**
-    Once tests are added, you'll be able to run them using a command like:
-    ```bash
-    poetry run pytest 
-    ```
+   ```bash
+   pip install poetry
+   ```
 
-6.  **Building the project (Placeholder):**
-    To build the project (e.g., for distribution), you can use:
-    ```bash
-    poetry build
-    ```
+   For alternative installation methods, visit the [Poetry documentation](https://python-poetry.org/docs/#installation).
 
-## How to Contribute
+3. **Install dependencies:**
+   ```bash
+   poetry install
+   ```
 
-Details on how to contribute will be added soon. We encourage collaboration and feedback!
+## Usage
+
+Run commands using poetry run:
+
+```bash
+poetry run python -m image_tool --help
+```
+
+Common commands:
+
+```bash
+# Resize an image
+poetry run python -m image_tool resize input.jpg --width 800 --height 600
+
+# Create a thumbnail
+poetry run python -m image_tool thumbnail input.jpg --size 200
+
+# Flip an image horizontally
+poetry run python -m image_tool flip input.jpg --direction horizontal
+```
+
+## Development
+
+1. **Run tests:**
+
+   ```bash
+   poetry run pytest
+   ```
+
+2. **Check code style:**
+
+   ```bash
+   poetry run ruff check .
+   ```
+
+3. **Format code:**
+
+   ```bash
+   poetry run ruff format .
+   ```
+
+4. **Build package:**
+   ```bash
+   poetry build
+   ```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
