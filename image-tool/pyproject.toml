@@ -1,0 +1,67 @@
+[tool.poetry]
+name = "image-tool"
+version = "0.1.0"
+description = "A Python-based CLI utility for common image manipulation tasks."
+authors = ["Jules <jules@google.com>"]
+readme = "README.md" # This will now point to image-tool/README.md
+packages = [{include = "image_tool", from = "src"}]
+
+[tool.poetry.dependencies]
+python = ">=3.10" # Taking the version from the new toml, ensuring it's >=3.10
+Pillow = "^10.0.0"
+
+[tool.poetry.group.dev.dependencies]
+# Add development dependencies here if any in the future (e.g., pytest)
+ruff = "^0.1.0"
+pytest = "^7.4"
+
+[tool.poetry.scripts]
+image-tool = "image_tool.main:app"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"] # Kept from the new toml
+build-backend = "poetry.core.masonry.api"
+
+# Ruff configuration
+[tool.ruff]
+select = ["E", "F", "I"] # Core Flake8 rules + isort
+ignore = []
+# fixable and unfixable are removed to use Ruff's defaults
+
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",         # Common virtualenv name
+    "venv",          # Another common virtualenv name
+    "env",           # Yet another common virtualenv name
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",  # Though not Python, often present in mixed projects
+    ".poetry",       # Poetry's own directory
+]
+per-file-ignores = {}
+
+line-length = 80 # Changed line-length
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+target-version = "py310"
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
