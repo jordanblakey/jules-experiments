@@ -1,8 +1,6 @@
 # Image Manipulation CLI
 
-This project is a Python-based CLI utility for performing common image manipulat
-ion tasks. It's designed to demonstrate effective project organization and moder
-n Python development practices.
+This project is a Python-based CLI utility for performing common image manipulation tasks. It's designed to demonstrate effective project organization and modern Python development practices.
 
 ## Purpose
 
@@ -42,8 +40,7 @@ The CLI tool provides the following image manipulation capabilities:
    pip install poetry
    ```
 
-   For alternative installation methods, visit the [Poetry documentation](https:
-//python-poetry.org/docs/#installation).
+   For alternative installation methods, visit the [Poetry documentation](https://python-poetry.org/docs/#installation).
 
 3. **Install dependencies:**
    ```bash
@@ -106,5 +103,4 @@ poetry run python -m image_tool flip input.jpg --direction horizontal
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for detail
-s.
+This project is licensed under the MIT License - see the LICENSE file for details.
