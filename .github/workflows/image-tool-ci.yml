@@ -30,23 +30,8 @@ jobs:
       - name: Install Poetry
         uses: snok/install-poetry@v1
 
-<<<<<<< HEAD:.github/workflows/image-tool-ci.yml
-      - name: Cache Poetry dependencies
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.cache/pypoetry
-            image-tool/.venv
-          key: ${{ runner.os }}-poetry-${{ hashFiles('image-tool/poetry.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-poetry-
-
-      - name: Install dependencies
-        run: cd image-tool && poetry install --no-interaction
-=======
       - name: Install dependencies
         run: cd image-tool && poetry install
->>>>>>> origin/main:.github/workflows/blank.yml
 
       - name: Run Ruff
         run: cd image-tool && poetry run ruff check .
