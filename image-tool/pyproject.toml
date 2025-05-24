@@ -1,18 +1,19 @@
 [tool.poetry]
-name = "image-manipulation-cli"
+name = "image-tool"
 version = "0.1.0"
 description = "A Python-based CLI utility for common image manipulation tasks."
-authors = ["Your Name <you@example.com>"] # Replace with actual author info if desired
+authors = ["Jules <jules@google.com>"]
 readme = "README.md" # This will now point to image-tool/README.md
 packages = [{include = "image_tool", from = "."}] # Adjusted 'from' to current dir
 
 [tool.poetry.dependencies]
 python = ">=3.10" # Taking the version from the new toml, ensuring it's >=3.10
 Pillow = "^10.0.0"
-ruff = "^0.1.0"
 
 [tool.poetry.group.dev.dependencies]
 # Add development dependencies here if any in the future (e.g., pytest)
+ruff = "^0.1.0"
+pytest = "^7.4"
 
 [tool.poetry.scripts]
 image-tool = "image_tool.main:app"
@@ -21,17 +22,12 @@ image-tool = "image_tool.main:app"
 requires = ["poetry-core>=2.0.0,<3.0.0"] # Kept from the new toml
 build-backend = "poetry.core.masonry.api"
 
-# Ruff configuration from the root pyproject.toml
+# Ruff configuration
 [tool.ruff]
-# Enable Pyflakes and pycodestyle rules by default.
-select = ["E", "F"]
+select = ["E", "F", "I"] # Core Flake8 rules + isort
 ignore = []
+# fixable and unfixable are removed to use Ruff's defaults
 
-# Allow autofix for all enabled rules (when `--fix`) is used.
-fixable = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "N", "Q", "S", "T", "W", "ANN", "ARG", "BLE", "COM", "DJ", "DTZ", "EM", "ERA", "EXE", "FBT", "ICN", "INP", "ISC", "NPY", "PD", "PGH", "PIE", "PL", "PT", "PTH", "PYI", "RET", "RSE", "RUF", "SIM", "SLF", "TCH", "TID", "TRY", "UP", "YTT"]
-unfixable = []
-
-# Exclude a few common directories.
 exclude = [
     ".bzr",
     ".direnv",
@@ -44,19 +40,20 @@ exclude = [
     ".ruff_cache",
     ".svn",
     ".tox",
-    ".venv",
+    ".venv",         # Common virtualenv name
+    "venv",          # Another common virtualenv name
+    "env",           # Yet another common virtualenv name
     "__pypackages__",
     "_build",
     "buck-out",
     "build",
     "dist",
-    "node_modules",
-    "venv",
+    "node_modules",  # Though not Python, often present in mixed projects
+    ".poetry",       # Poetry's own directory
 ]
 per-file-ignores = {}
 
-# Same as Black.
-line-length = 88
+line-length = 80 # Changed line-length
 
 # Allow unused variables when underscore-prefixed.
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
