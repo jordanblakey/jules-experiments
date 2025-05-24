@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-wheel-metadata/
+.eggs/
+*.egg-info/
+dist/
+build/
+
+# Poetry
+.poetry/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Original entries (if any not covered above)
+.env
