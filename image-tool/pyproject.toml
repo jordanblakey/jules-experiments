@@ -1,10 +1,12 @@
-[tool.poetry]
+[project]
 name = "image-tool"
 version = "0.1.0"
 description = "A Python-based CLI utility for common image manipulation tasks."
-authors = ["Jules <jules@google.com>"]
+authors = [{ name = "Jules", email = "jules@google.com" }]
 readme = "README.md"                                                            # This will now point to image-tool/README.md
-packages = [{ include = "src" }]                                                # Package is now 'src'
+
+[tool.poetry]
+packages = [{ include = "src" }] # Package is now 'src'
 
 [tool.poetry.dependencies]
 python = ">=3.10"  # Taking the version from the new toml, ensuring it's >=3.10
@@ -12,12 +14,12 @@ Pillow = "^10.0.0"
 
 [tool.poetry.group.dev.dependencies]
 # Add development dependencies here if any in the future (e.g., pytest)
-ruff = "^0.1.0"
+ruff = "^0.5.3"
 pytest = "^7.4"
 pytest-cov = ">=3.0.0,<4.0.0"
 safety = ">=3.0.0,<4.0.0"
 
-[tool.poetry.scripts]
+[project.scripts]
 image-tool = "src.main:main"
 
 [build-system]
