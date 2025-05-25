@@ -46,8 +46,11 @@ jobs:
       - name: Install dependencies
         run: cd image-tool && poetry install --no-interaction
 
+      - name: Scan dependencies for vulnerabilities
+        run: cd image-tool && poetry export --without-hashes -f requirements.txt | poetry run safety check --stdin
+
       - name: Run Ruff
         run: cd image-tool && poetry run ruff check .
 
       - name: Run Pytest
-        run: cd image-tool && poetry run pytest
+        run: cd image-tool && poetry run pytest --cov=image_tool --cov-report=term-missing --cov-report=xml:coverage.xml
