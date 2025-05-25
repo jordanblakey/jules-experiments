@@ -16,7 +16,7 @@ Pillow = "^10.0.0"
 # Add development dependencies here if any in the future (e.g., pytest)
 ruff = "^0.5.3"
 pytest = "^7.4"
-pytest-cov = ">=3.0.0,<4.0.0"
+pytest-cov = ">=3.0.0,<7.0.0"
 safety = ">=3.0.0,<4.0.0"
 
 [project.scripts]
