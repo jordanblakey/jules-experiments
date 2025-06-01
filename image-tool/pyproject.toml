@@ -14,7 +14,7 @@ Pillow = "^10.0.0"
 
 [tool.poetry.group.dev.dependencies]
 # Add development dependencies here if any in the future (e.g., pytest)
-ruff = "^0.5.3"
+ruff = "^0.11.12"
 pytest = "^8.3"
 pytest-cov = ">=3.0.0,<4.0.0"
 safety = ">=3.0.0,<4.0.0"
